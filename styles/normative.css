@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.menu{
+    background-color: #1A202C;
+    color: #fff;
+    height: 70px;
+} 
+
+.menu_container{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.menu_links{
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+}
+
+.menu-item{
+    list-style: none;
+    position: relative;
+    height: 100%;
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --transform: rotate(-90deg);
+}
+
+.menu-item:hover{
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0);
+
+}
+.menu_arrow{
+    transform: var(--transform);
+    transition: transform .3s;
+    display: block;
+    margin-left: 3px;
+}
+
+.menu_link{
+    color: #fff;
+    text-decoration: none;
+    padding: 0 30px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.menu_link:hover{
+    background-color: #5e7094;
+}
+.menu_nesting{
+    clip-path: var(--clip);
+    list-style: none;
+    transition: clip-path .3s;
+    clip-path: var(--clip);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background-color: #000;
+}
+
+.menu_link--inside{
+    padding: 30px 100px 30px 20px;
+}
+
+.menu_link--inside:hover{
+    background-color: #798499;
+}
+
+.menu_hamburger{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    display: none;
+}
+
+
+.content{
+    display: flex;
+    text-align: justify;
+    height: 89vh;
+    display: none;
+    transition: 0.3s;
+    
+}
+.button-prev{
+    display: none;
+}
+.content.active{
+    display: flex;
+}
+
+.content-right{
+    width: 75%;
+    background: gray;
+    overflow-y: auto;
+
+}
+
+.title{
+    font-size: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 200;
+}
+
+.content-right p{
+    text-align: justify;
+    color: #fff;
+    margin: 30px 20px;
+    font-size: 25px;
+}
+ 
+
+.content-left{
+    width: 25%;
+    background: #5e7094;
+}
+
+.content-left img{
+    position: relative;
+    display: flex;
+    border-radius: 50%;
+    top: 30%;
+    width: 20vw;
+    right: -15%;
+}
